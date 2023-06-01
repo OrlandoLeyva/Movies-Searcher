@@ -1,0 +1,267 @@
+:root {
+  --white:#FFFFFF;
+  --dark: #111827;
+  --gray: #6B7280;
+
+  --fw-extra-bold: 800;
+  --fw-bold: 700;
+  --fw-regular: 500;
+  --fw-normal: 400;
+
+  --fs-extra-big: 2.625rem;
+  --fs-big: 1.125rem;
+  --fs-regular: 0.875rem;
+  --fs-small: 0.75rem
+}
+
+/** GENERAL */
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+img,
+picture {
+  max-width: 100px;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+
+input,
+button {
+  font: inherit;
+}
+
+a {
+  text-decoration: none;
+  color: unset;
+}
+
+/** UTILS  */
+
+.block {display: block;}
+
+.inline-flow {padding-inline: 2.125rem;}
+
+/** HEADER */
+
+header {
+  display: flex;
+  justify-content: space-between;
+  height: 250px;
+  background-image: url('../assets/images/header-bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: var(--white);
+  font-weight: var(--fw-bold);
+  align-items: center;
+  gap: 1rem;
+}
+
+.title {
+  font-size: var(--fs-extra-big);
+  font-weight: var(--fw-extra-bold);
+}
+
+/** MOVIES */
+
+.movies-section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  font-weight: var(--fw-regular);
+  margin: auto;
+}
+
+.movies-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  font-weight: var(--fw-regular);
+  margin: auto;
+}
+
+.initial-state, .loading {
+  margin-top: 100px;
+  text-align: center;
+}
+
+.initial-state h2, .loading {
+  font-size: var(--fs-big);
+  color: var(--dark);
+  font-weight: var(--fw-bold);
+  margin-top: 20px;
+  margin-bottom: 10px;
+}
+
+.search-container {
+  display: flex;
+  flex-wrap: wrap;
+  border: 1px solid var(--gray);
+  border-radius: 5px;
+  align-items: center;
+  padding-left: 1rem;
+  max-width: 600px;
+  position: relative;
+  margin-top: -20px;
+  background-color: var(--white);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.search-container input,
+.search-button {
+  font-size: var(--fs-regular);
+  color: #374151;
+}
+
+.search-container input:focus {
+  border: none;
+  outline: none;
+}
+
+.search-container input {
+  flex-grow: 1;
+  padding: .8rem;
+  border: none;
+}
+
+.search-button {
+  align-self: stretch;
+  background-color: unset;
+  border: none;
+  border-left: 1px solid var(--gray);
+  padding: .8rem 1rem;
+  cursor: pointer;
+}
+
+@media(max-width: 450px) {
+  header {
+    background-repeat: repeat-x;
+  }
+  .search-container svg {
+    display: none;
+  }
+  .search-container {
+    margin-top: -40px;
+    flex-direction: column;
+    align-items: center;
+    padding: 5px 0;
+    gap: 1rem;
+  }
+
+  .search-container input {
+    border-bottom: 1px solid var(--gray);
+    padding: 5px 0;
+    text-align: center;
+  }
+
+  .search-container input::placeholder{
+    text-align: center;
+  }
+
+  .search-button {
+    align-self: unset;
+    padding: 0;
+    border-radius: 5px;
+    background-color: var(--gray);
+    padding: .4rem 1.5rem;
+    
+  }
+}
+
+.movie {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding-block: 1rem;
+  border-bottom: .5px solid var(--gray);
+  max-width: 400px;
+}
+
+@media (min-width: 850px){
+  .movies-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 1fr;
+    gap: 3rem;
+    justify-items: center;
+    align-items: stretch;
+    /* flex-direction: row;
+    flex-wrap: wrap; */
+  }
+
+  .movie {
+    flex-grow: 1;
+    /* background-color: blueviolet; */
+
+  }
+}
+
+.movie-poster {
+  width: 100px;
+  height: 150px;
+}
+
+.movie-info-top {
+  display: flex;
+  gap: .5rem;
+  align-items: center;
+  margin-bottom: .5rem;
+}
+
+.movie-title {
+  font-size: var(--fs-big);
+  font-weight: var(--fw-regular);
+}
+
+.watchlist-toggle-button {
+  border: none;
+  color: var(--dark);
+  font-size: var(--fs-regular);
+  font-weight: var(--fw-normal);
+  background-color: transparent;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.added-indicator {
+  background-color: var(--dark);
+  display: inline-block;
+  color: var(--white);
+  border-radius: 50%;
+  width: 16px;
+  aspect-ratio: 1;
+  text-align: center;
+}
+
+.movie-description {
+  color: var(--gray);
+  font-weight: var(--fw-regular);
+  font-size: var(--fs-regular);
+  line-height: 1.25rem;
+}
+
+/* WATCHLIST */
+
+.add-some-movies-links:hover {
+  text-decoration: underline;
+}
