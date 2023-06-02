@@ -220,10 +220,10 @@ header {
   }
 }
 
-.movie-poster {
+/* .movie-poster {
   width: 100%;
   height: unset;
-}
+} */
 
 .movie-info-top {
   display: flex;

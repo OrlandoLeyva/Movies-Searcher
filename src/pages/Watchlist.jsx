@@ -4,7 +4,7 @@ import { Link } from "react-router-dom"
 import Movie from "../components/Movie"
 
 export default function Watchlist(){
-    const [watchlist] = useState(()=>{
+    const [watchlist, setWatchlist] = useState(()=>{
         return JSON.parse(localStorage.getItem('watchlist')) || []
     })
     
@@ -17,7 +17,13 @@ export default function Watchlist(){
         </div>
     )
 
-    const moviesEl = watchlist.map(movie => (<Movie key={movie.id} data={movie} />)
+    function updateWatchlist(movieId){
+        setWatchlist(prevWatchlist => {
+            return prevWatchlist.filter(movie => movie.id !== movieId)
+        })
+    }
+
+    const moviesEl = watchlist.map(movie => (<Movie key={movie.id} data={movie} updateWatchlist={updateWatchlist} />)
     )
 
     return (

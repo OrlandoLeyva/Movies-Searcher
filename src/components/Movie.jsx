@@ -4,7 +4,7 @@ import { useState } from "react"
 
 /* eslint-disable react/prop-types */
 export default function Movie(props){
-    const {data: movieData} = props
+    const {data: movieData, updateWatchlist} = props
     const [isInWatchlist, setIsInWatchlist] = useState(()=>{
         const watchlist = JSON.parse(localStorage.getItem('watchlist')) || []
         return watchlist.some(movie => movie.id == movieData.id)
@@ -21,6 +21,9 @@ export default function Movie(props){
             const newWatchlist = watchlist.filter(movie => movie.id != movieData.id)
             localStorage.setItem('watchlist', JSON.stringify(newWatchlist))
             setIsInWatchlist(false)
+            if (updateWatchlist) {
+                updateWatchlist(movieData.id)
+            }
         } else {
             watchlist.push(movieData)
             localStorage.setItem('watchlist', JSON.stringify(watchlist))
