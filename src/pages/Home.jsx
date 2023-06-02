@@ -39,8 +39,9 @@ export default function Home(){
         setShouldFetchMovies(true)
     }
 
-    const moviesEl = movies.map(movie => (<Movie key={movie.id} data={movie} />)
-    )
+    const moviesToDisplay = movies.filter(movie => movie.overview.length > 0)
+
+    const moviesEl = moviesToDisplay.map(movie => (<Movie key={movie.id} data={movie} />))
 
     if (loading || notFound) return (
         <div className='movies-section inline-flow'>

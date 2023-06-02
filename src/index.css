@@ -27,6 +27,7 @@ body, html {
 
 body {
   font-family: 'Inter', sans-serif;
+  color: var(--white);
 }
 
 img,
@@ -50,6 +51,10 @@ button {
 a {
   text-decoration: none;
   color: unset;
+}
+
+.site-wrapper {
+  background-color: #0f101c;
 }
 
 /** UTILS  */
@@ -188,7 +193,7 @@ header {
 
 .movie {
   display: flex;
-  align-items: center;
+  align-items: start;
   gap: 1rem;
   padding-block: 1rem;
   border-bottom: .5px solid var(--gray);
@@ -208,15 +213,15 @@ header {
   }
 
   .movie {
+    flex-direction: column;
+    align-items: stretch;
     flex-grow: 1;
-    /* background-color: blueviolet; */
-
   }
 }
 
 .movie-poster {
-  width: 100px;
-  height: 150px;
+  width: 100%;
+  height: unset;
 }
 
 .movie-info-top {
@@ -233,7 +238,8 @@ header {
 
 .watchlist-toggle-button {
   border: none;
-  color: var(--dark);
+  /* color: var(--dark); */
+  color: var(--white);
   font-size: var(--fs-regular);
   font-weight: var(--fw-normal);
   background-color: transparent;
