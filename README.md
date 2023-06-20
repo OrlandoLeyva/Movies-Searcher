@@ -1,13 +1,4 @@
-# Advice generator app solution
-
-## Table of contents
-
-- [Overview](#overview)
-  - [The challenge](#the-challenge)
-  - [Links](#links)
-- [My process](#my-process)
-  - [Built with](#built-with)
-- [Author](#author)
+# Movies Searcher
 
 ## Overview
 
@@ -15,17 +6,16 @@
 
 <pre class="vditor-reset" placeholder="" contenteditable="true" spellcheck="false"><p data-block="0"><img src="https://file+.vscode-resource.vscode-cdn.net/home/orlando/development%20area/MyDream/Frontend_carrer_path/projects/portfolio-projects/react/quizzical/image/README/1685658756022.png" alt="1685658756022"/></p></pre>
 
-
 Users should be able to:
 
 - View the optimal layout for the app depending on their device's screen size
 - See hover states for all interactive elements on the page
-- Validate answers and see the correct and incorrect ones
-- view the final result
+- Search for movies
+- Add and remove movies form Watchlist
 
 ### Links
 
-- Live Site URL: [Quizzical](https://quizzical-app-orlando.netlify.app/)
+- Live Site URL: [Movies Searcher](https://movies-searcher-orlando.netlify.app/)
 
 ## My process
 
